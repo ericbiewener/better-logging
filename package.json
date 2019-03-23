@@ -1,0 +1,16 @@
+{
+  "name": "log-all-the-things",
+  "version": "1.0.0",
+  "description": "Colorful and pretty-printed log output.",
+  "main": "index.js",
+  "repository": "https://github.com/ericbiewener/better-logging",
+  "author": "Eric Biewener",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "chalk": "2.4.2"
+  }
+}
