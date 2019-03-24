@@ -11,6 +11,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "as-table": "1.0.37",
     "chalk": "2.4.2"
   }
 }

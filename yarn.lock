@@ -9,6 +9,13 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
+as-table@1.0.37:
+  version "1.0.37"
+  resolved "https://registry.yarnpkg.com/as-table/-/as-table-1.0.37.tgz#8211e03d0b5b7a15d278aaeb3bce885f6e460f39"
+  integrity sha512-nzOpI2jF8wo2dZ1dZ2t9dfq+xZsumv4c5av7kQIU9+P8nTF+k+DGeU4f1C53XB/OAhZIhJJikKOM1DYqlGUHlQ==
+  dependencies:
+    printable-characters "^1.0.42"
+
 chalk@2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -39,6 +46,11 @@ has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
   integrity sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
+
+printable-characters@^1.0.42:
+  version "1.0.42"
+  resolved "https://registry.yarnpkg.com/printable-characters/-/printable-characters-1.0.42.tgz#3f18e977a9bd8eb37fcc4ff5659d7be90868b3d8"
+  integrity sha1-Pxjpd6m9jrN/zE/1ZZ176Qhos9g=
 
 supports-color@^5.3.0:
   version "5.5.0"
