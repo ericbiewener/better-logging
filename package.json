@@ -7,8 +7,11 @@
   "author": "Eric Biewener",
   "license": "MIT",
   "private": false,
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "build": "webpack"
+    "test": "node ./test.js"
   },
   "dependencies": {
     "as-table": "1.0.37",

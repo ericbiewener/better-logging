@@ -13,7 +13,7 @@ Object.assign(log, {
   success: (...args) => console.log(chalk.green(...stringify(args))),
   error: (...args) => console.error(chalk.red(...stringify(args))),
   info: (...args) => console.info(chalk.blue(...stringify(args))),
-  table: asTable,
+  table: (...args) => log(asTable(...args)),
 })
 
 module.exports = log
