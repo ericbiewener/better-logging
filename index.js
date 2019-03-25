@@ -1,5 +1,5 @@
 const chalk = require('chalk')
-const asTable = require('as-table')
+const asTable = require('as-table').configure({ right: true })
 
 function stringify(args) {
   return args.map(a => a && Object.getPrototypeOf(a) === Object.prototype ? JSON.stringify(a, null, 2): a)
