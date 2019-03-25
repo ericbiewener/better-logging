@@ -1,7 +1,7 @@
 const log = require('.')
 
-log('default')
-log.success('success')
+log('default')(1)
+log.success('success')(2)
 log.info('info')
 log.error('error')
 log({ foo: { bar: { baz: [1, 2, [3, 4]]}}})
