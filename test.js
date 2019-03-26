@@ -1,9 +1,13 @@
 const log = require('.')
 
-log('default')(1)
-log.success('success')(2)
-log.info('info')
-log.error('error')
-log({ foo: { bar: { baz: [1, 2, [3, 4]]}}})
+log({ foo: { bar: { baz: 1 }}})
+log('extra blank line after')()
+log('two blank lines after')(2)
 
-log.table([{ 'foo': 1, 'bar': 2 }], [{ 'foo': 3, 'bar': 4 }])
+const methods = ['success', 'error', 'info']
+for (const m of methods) {
+  log[m](m)
+  log[m[0]](m[0])
+}
+
+log.table([{ col1: 'foo', col2: 'bar' }])

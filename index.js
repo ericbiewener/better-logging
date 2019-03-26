@@ -21,4 +21,9 @@ Object.assign(log, {
   table: (...args) => log(asTable(...args)),
 })
 
+log.s = log.success
+log.e = log.error
+log.i = log.info
+log.t = log.table
+
 module.exports = log
