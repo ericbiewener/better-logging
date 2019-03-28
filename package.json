@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "as-table": "1.0.37",
-    "chalk": "2.4.2"
+    "chalk": "2.4.2",
+    "log-symbols": "2.2.0"
   }
 }

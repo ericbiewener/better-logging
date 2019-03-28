@@ -1,5 +1,6 @@
 const chalk = require('chalk')
 const asTable = require('as-table').configure({ right: true })
+const logSymbols = require('log-symbols');
 
 function stringify(args) {
   return args.map(a => a && Object.getPrototypeOf(a) === Object.prototype ? JSON.stringify(a, null, 2): a)
@@ -15,15 +16,21 @@ function log(...args) {
 }
 
 Object.assign(log, {
-  success: (...args) => log(chalk.green(...stringify(args))),
-  error: (...args) => log(chalk.red(...stringify(args))),
-  info: (...args) => log(chalk.blue(...stringify(args))),
+  green: (...args) => log(chalk.green(...stringify(args))),
+  red: (...args) => log(chalk.red(...stringify(args))),
+  blue: (...args) => log(chalk.blue(...stringify(args))),
+  yellow: (...args) => log(chalk.yellow(...stringify(args))),
   table: (...args) => log(asTable(...args)),
 })
 
-log.s = log.success
-log.e = log.error
-log.i = log.info
-log.t = log.table
+Object.assign(log, {
+  success: (...args) => log.green(logSymbols.success, ...args),
+  error: (...args) => log.red(logSymbols.error, ...args),
+  info: (...args) => log.blue(logSymbols.info, ...args),
+  warn: (...args) => log.yellow(logSymbols.warning, ...args),
+})
+
+// single letter shortcuts
+for (const k in log) log[k[0]] = log[k]
 
 module.exports = log
