@@ -1,6 +1,6 @@
 {
   "name": "log-all-the-things",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Colorful and pretty-printed log output.",
   "main": "index.js",
   "repository": "https://github.com/ericbiewener/better-logging",
