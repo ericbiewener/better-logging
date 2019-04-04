@@ -1,6 +1,7 @@
 const log = require('.')
 
 log({ foo: { bar: { baz: 1 }}})
+log([{ foo: { bar: { baz: 1 }}}])
 log('extra blank line after')()
 log('two blank lines after')(2)
 

@@ -3,7 +3,10 @@ const asTable = require('as-table').configure({ right: true })
 const logSymbols = require('log-symbols');
 
 function stringify(args) {
-  return args.map(a => a && Object.getPrototypeOf(a) === Object.prototype ? JSON.stringify(a, null, 2): a)
+  return args.map(a => {
+    const isBasicObject = a && Object.getPrototypeOf(a) === Object.prototype
+    return isBasicObject || Array.isArray(a) ? JSON.stringify(a, null, 2) : a
+  })
 }
 
 function logEmptyLines(n = 1) {
