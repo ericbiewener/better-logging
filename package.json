@@ -1,21 +1,46 @@
 {
-  "name": "log-all-the-things",
-  "version": "2.1.0",
-  "description": "Colorful and pretty-printed log output.",
-  "main": "index.js",
-  "repository": "https://github.com/ericbiewener/better-logging",
-  "author": "Eric Biewener",
-  "license": "MIT",
-  "private": false,
-  "files": [
-    "index.js"
-  ],
-  "scripts": {
-    "test": "node ./test.js"
-  },
-  "dependencies": {
-    "as-table": "1.0.37",
-    "chalk": "2.4.2",
-    "log-symbols": "2.2.0"
-  }
+		"name": "log-all-the-things",
+		"version": "3.0.0",
+		"description": "Better logging for a better world.",
+		"main": "index.js",
+		"repository": "https://github.com/ericbiewener/log-all-the-things",
+		"author": "Eric Biewener <ebiewener@gmail.com>",
+		"license": "MIT",
+		"files": [
+				"./index.js",
+				"./types.d.ts"
+		],
+		"types": "./types.d.ts",
+		"keywords": [
+				"color",
+				"colour",
+				"colors",
+				"terminal",
+				"console",
+				"cli",
+				"string",
+				"str",
+				"ansi",
+				"style",
+				"styles",
+				"tty",
+				"formatting",
+				"rgb",
+				"256",
+				"shell",
+				"xterm",
+				"log",
+				"logging",
+				"command-line",
+				"text"
+		],
+		"scripts": {
+				"start": "node ./test.js"
+		},
+		"dependencies": {
+				"chalk": "^2.0.0"
+		},
+		"devDependencies": {
+				"as-table": "1.0.52"
+		}
 }

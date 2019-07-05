@@ -1,39 +1,48 @@
-const chalk = require('chalk')
-const asTable = require('as-table').configure({ right: true })
-const logSymbols = require('log-symbols');
+const chalk = require("chalk");
 
-function stringify(args) {
-  return args.map(a => {
-    const isBasicObject = a && Object.getPrototypeOf(a) === Object.prototype
-    return isBasicObject || Array.isArray(a) ? JSON.stringify(a, null, 2) : a
-  })
-}
+let log;
 
-function logEmptyLines(n = 1) {
-  for (let i = 0; i < n; i++) log()
-}
+const plugins = {}
 
-function log(...args) {
-  console.log(...stringify(args))
-  return logEmptyLines
-}
+const handler = {
+  get: (obj, prop) => (...args) => {
+    if (prop === 'extend') {
+      plugins[args[0]] = { fn: args[1], autoLog: args[2] !== false}
+      return log
+    }
 
-Object.assign(log, {
-  green: (...args) => log(chalk.green(...stringify(args))),
-  red: (...args) => log(chalk.red(...stringify(args))),
-  blue: (...args) => log(chalk.blue(...stringify(args))),
-  yellow: (...args) => log(chalk.yellow(...stringify(args))),
-  table: (...args) => log(asTable(...args)),
-})
+    const plugin = plugins[prop]
+    if (plugin) {
+      const val = plugin.fn(...args)
+      if (plugin.autoLog) console.log(val)
+      return log
+    }
 
-Object.assign(log, {
-  success: (...args) => log.green(logSymbols.success, ...args),
-  error: (...args) => log.red(logSymbols.error, ...args),
-  info: (...args) => log.blue(logSymbols.info, ...args),
-  warn: (...args) => log.yellow(logSymbols.warning, ...args),
-})
+    for (arg of args) console.log(chalk[prop](arg));
+    return log;
+  }
+};
 
-// single letter shortcuts
-for (const k in log) log[k[0]] = log[k]
+function mainFn(...args) {
+  // detect if it was called via a tagged template literal
+  const [arg0, ...rest] = args
+  if (
+    Array.isArray(arg0) &&
+    arg0.length === rest.length + 1 &&
+    arg0.raw &&
+    arg0.raw.length === arg0.length &&
+    Object.isFrozen(arg0)
+    // Additional check should we ever need it... could check the same on arg0.raw as well
+    // arg0.every(a => typeof a === "string")
+  ) {
+    console.log(chalk(...args));
+  } else {
+    console.log(...args);
+  }
 
-module.exports = log
+  return log;
+};
+
+log = new Proxy(mainFn, handler);
+
+module.exports = log;
