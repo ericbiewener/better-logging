@@ -53,7 +53,7 @@ log('foo').green('bar')('baz')
 ```
 
 ### Plugins
-Add additional methods the `log` object via the `extend` method:
+Add additional methods to the `log` object via the `extend` method:
 
 ```js
 const log = require('log-all-the-things')
