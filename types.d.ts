@@ -1,15 +1,15 @@
-declare module "chalklog" {
+declare module "log-all-the-things" {
   type Plugin = (
     name: string,
     fn: (...args: any[]) => unknown,
     autoLog?: boolean
   ) => void;
 
-  type Log = {
-    (): Log;
+  type Log = Record<string, (...args: any[]) => Log> & {
+    (...args: any[]): Log;
     extend: Plugin;
-    [fn: string]: (...args: any[]) => Log;
   };
-
-  export = Log;
+  
+  const log: Log
+  export default log
 }
