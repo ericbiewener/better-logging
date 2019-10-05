@@ -2,20 +2,20 @@ const chalk = require("chalk");
 
 let log;
 
-const plugins = {}
+const plugins = {};
 
 const handler = {
   get: (obj, prop) => (...args) => {
-    if (prop === 'extend') {
-      plugins[args[0]] = { fn: args[1], autoLog: args[2] !== false}
-      return log
+    if (prop === "extend") {
+      plugins[args[0]] = { fn: args[1], autoLog: args[2] !== false };
+      return log;
     }
 
-    const plugin = plugins[prop]
+    const plugin = plugins[prop];
     if (plugin) {
-      const val = plugin.fn(...args)
-      if (plugin.autoLog) console.log(val)
-      return log
+      const val = plugin.fn(...args);
+      if (plugin.autoLog) console.log(val);
+      return log;
     }
 
     for (arg of args) console.log(chalk[prop](arg));
@@ -25,7 +25,7 @@ const handler = {
 
 function mainFn(...args) {
   // detect if it was called via a tagged template literal
-  const [arg0, ...rest] = args
+  const [arg0, ...rest] = args;
   if (
     Array.isArray(arg0) &&
     arg0.length === rest.length + 1 &&
@@ -41,8 +41,8 @@ function mainFn(...args) {
   }
 
   return log;
-};
+}
 
 log = new Proxy(mainFn, handler);
 
-module.exports = log;
+module.exports = { log };
