@@ -10,6 +10,5 @@ declare module "log-all-the-things" {
     extend: Plugin;
   };
   
-  const log: Log
-  export default log
+  export const log: Log
 }
