@@ -1,46 +1,45 @@
 {
-		"name": "log-all-the-things",
-		"version": "3.0.1",
-		"description": "Better logging for a better world.",
-		"main": "index.js",
-		"repository": "https://github.com/ericbiewener/log-all-the-things",
-		"author": "Eric Biewener <ebiewener@gmail.com>",
-		"license": "MIT",
-		"files": [
-				"./index.js",
-				"./types.d.ts"
-		],
-		"types": "./types.d.ts",
-		"keywords": [
-				"color",
-				"colour",
-				"colors",
-				"terminal",
-				"console",
-				"cli",
-				"string",
-				"str",
-				"ansi",
-				"style",
-				"styles",
-				"tty",
-				"formatting",
-				"rgb",
-				"256",
-				"shell",
-				"xterm",
-				"log",
-				"logging",
-				"command-line",
-				"text"
-		],
-		"scripts": {
-				"start": "node ./test.js"
-		},
-		"dependencies": {
-				"chalk": "^2.0.0"
-		},
-		"devDependencies": {
-				"as-table": "1.0.52"
-		}
+	"name": "log-all-the-things",
+	"version": "3.0.1",
+	"description": "Better logging for a better world.",
+	"main": "src/index.js",
+	"repository": "https://github.com/ericbiewener/log-all-the-things",
+	"author": "Eric Biewener <ebiewener@gmail.com>",
+	"license": "MIT",
+	"files": [
+		"src"
+	],
+	"types": "./src/types.d.ts",
+	"keywords": [
+		"color",
+		"colour",
+		"colors",
+		"terminal",
+		"console",
+		"cli",
+		"string",
+		"str",
+		"ansi",
+		"style",
+		"styles",
+		"tty",
+		"formatting",
+		"rgb",
+		"256",
+		"shell",
+		"xterm",
+		"log",
+		"logging",
+		"command-line",
+		"text"
+	],
+	"scripts": {
+		"start": "node test.js"
+	},
+	"dependencies": {
+		"chalk": "^2.0.0"
+	},
+	"devDependencies": {
+		"as-table": "1.0.52"
+	}
 }
