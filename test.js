@@ -1,34 +1,38 @@
-const log = require('.')
+const {log} = require('.')
 const asTable = require('as-table').configure({ right: true })
 
-log.red("red")
-log.yellow("yellow1", "yellow2")
-log.green("green")()
-log.white("line break")
-log("called as fn")
+// console.log(chalk.underline('underline'))
+log.red('hi')
+log.red.underline('hi')
 
-const a = "a"
-const b = { foo: "bar "}
-const c = ["array!", "other array"]
-log`
-CPU: {red ${a}}
-RAM: {green ${b}}
-DISK: {rgb(255,131,0) ${c}}
-${a}`()
+// log.red("red")
+// log.yellow("yellow1", "yellow2")
+// log.green("green")()
+// log.white("line break")
+// log("called as fn")
 
-log('hello') // console.log('hello')
-log.green('hello') // console.log(chalk.green('hello'))
-log`{green hello}` // console.log(chalk`{green hello}`)
+// const a = "a"
+// const b = { foo: "bar "}
+// const c = ["array!", "other array"]
+// log`
+// CPU: {red ${a}}
+// RAM: {green ${b}}
+// DISK: {rgb(255,131,0) ${c}}
+// ${a}`()
 
-const var1 = "hello"
-const var2 = "hello"
+// log('hello') // console.log('hello')
+// log.green('hello') // console.log(chalk.green('hello'))
+// log`{green hello}` // console.log(chalk`{green hello}`)
 
-log`
-{green ${var1}}
-{rgb(255,131,0) ${var2}}
-`
+// const var1 = "hello"
+// const var2 = "hello"
 
-log('foo').green('bar')('baz')()
+// log`
+// {green ${var1}}
+// {rgb(255,131,0) ${var2}}
+// `
 
-log.extend('table', asTable)
-log.table([{ col1: 'foo', col2: 'bar' }])().green('hey there!')().table([{ col1: 'foo', col2: 'bar' }])
+// log('foo').green('bar')('baz')()
+
+// log.extend('table', asTable)
+// log.table([{ col1: 'foo', col2: 'bar' }])().green('hey there!')().table([{ col1: 'foo', col2: 'bar' }])

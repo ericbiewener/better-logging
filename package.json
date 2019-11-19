@@ -34,7 +34,8 @@
 		"text"
 	],
 	"scripts": {
-		"start": "node test.js"
+		"start": "node test.js",
+		"test": "yarn start"
 	},
 	"dependencies": {
 		"chalk": "^2.0.0"

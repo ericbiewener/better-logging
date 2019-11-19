@@ -5,21 +5,27 @@ let log;
 const plugins = {};
 
 const handler = {
-  get: (obj, prop) => (...args) => {
-    if (prop === "extend") {
-      plugins[args[0]] = { fn: args[1], autoLog: args[2] !== false };
-      return log;
-    }
+  get: (obj, prop) => {
+    console.log(obj, prop)
 
-    const plugin = plugins[prop];
-    if (plugin) {
-      const val = plugin.fn(...args);
-      if (plugin.autoLog) console.log(val);
-      return log;
-    }
+    const fn = (...args) => {
+      if (prop === "extend") {
+        plugins[args[0]] = { fn: args[1], autoLog: args[2] !== false };
+        return log;
+      }
 
-    for (arg of args) console.log(chalk[prop](arg));
-    return log;
+      const plugin = plugins[prop];
+      if (plugin) {
+        const val = plugin.fn(...args);
+        if (plugin.autoLog) console.log(val);
+        return log;
+      }
+
+      for (arg of args) console.log(chalk[prop](arg));
+      return log;
+    };
+
+    return new Proxy(fn, handler)
   }
 };
 
