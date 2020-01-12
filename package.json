@@ -1,15 +1,15 @@
 {
   "name": "log-all-the-things",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "Better logging for a better world.",
   "main": "dist/index.js",
   "repository": "https://github.com/ericbiewener/log-all-the-things",
   "author": "Eric Biewener <ebiewener@gmail.com>",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist/src"
   ],
-  "types": "./src/types.d.ts",
+  "types": "dist/src/types.d.ts",
   "keywords": [
     "color",
     "colour",
