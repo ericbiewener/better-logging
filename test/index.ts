@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import log from '../src'
+import { log } from '../src'
 import asTable from 'as-table'
 
 asTable.configure({ right: true })

@@ -51,4 +51,4 @@ function mainFn(...args: any[]) {
 
 log = new Proxy(mainFn, handler) as Log
 
-export default log
+export { log }
