@@ -1,6 +1,6 @@
 {
   "name": "log-all-the-things",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Better logging for a better world.",
   "main": "dist/src/index.js",
   "repository": "https://github.com/ericbiewener/log-all-the-things",
